@@ -148,16 +148,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
 
+    // Helper function to perform search with validation
+    const performSearch = function() {
+        const query = searchInput ? searchInput.value.trim() : '';
+        if (query && query.length > 0) {
+            searchProducts(query);
+        } else if (searchBtn) {
+            alert('Please enter a search term');
+        }
+    };
+
     if (searchBtn) {
-        searchBtn.addEventListener('click', function() {
-            searchProducts(searchInput.value);
-        });
+        searchBtn.addEventListener('click', performSearch);
     }
 
     if (searchInput) {
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                searchProducts(searchInput.value);
+                performSearch();
             }
         });
     }

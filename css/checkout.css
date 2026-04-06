@@ -51,6 +51,14 @@
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 14px;
+    color: var(--dark-text);
+    background-color: var(--white);
+    font-weight: 500;
+}
+
+.form-group input::placeholder {
+    color: #999;
+    opacity: 1;
 }
 
 .form-group input:focus {
@@ -341,6 +349,22 @@ html[data-theme="dark"] .modal-body {
     background-color: var(--white);
 }
 
+html[data-theme="dark"] .form-group input {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+html[data-theme="dark"] .form-group input::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+html[data-theme="dark"] .form-group input:focus {
+    border-color: var(--primary-color);
+    background-color: #333;
+}
+
 html[data-theme="dark"] .modal-footer {
     border-top-color: var(--border-color);
     background-color: var(--white);
@@ -403,5 +427,15 @@ html[data-theme="dark"] .modal-close {
 
     .form-section h3 {
         font-size: 14px;
+    }
+
+    .form-group input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+        font-weight: 700;
     }
 }

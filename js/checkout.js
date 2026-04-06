@@ -213,4 +213,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (errorEl) errorEl.textContent = '';
         });
     });
+
+    // Search functionality
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            const q = searchInput.value.trim();
+            if (q) {
+                window.location.href = '../index.html?search=' + encodeURIComponent(q);
+            }
+        });
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const q = searchInput.value.trim();
+                if (q) {
+                    window.location.href = '../index.html?search=' + encodeURIComponent(q);
+                }
+            }
+        });
+    }
 });

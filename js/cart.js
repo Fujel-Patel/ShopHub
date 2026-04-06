@@ -13,9 +13,16 @@ function displayCartItems() {
                 <a href="../index.html" class="continue-shopping-btn">Continue Shopping</a>
             </div>
         `;
-        document.getElementById('checkoutBtn').disabled = true;
-        document.getElementById('checkoutBtn').style.opacity = '0.5';
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        checkoutBtn.style.opacity = '0.5';
+        checkoutBtn.style.pointerEvents = 'none';
+        checkoutBtn.style.cursor = 'not-allowed';
         return;
+    } else {
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        checkoutBtn.style.opacity = '1';
+        checkoutBtn.style.pointerEvents = 'auto';
+        checkoutBtn.style.cursor = 'pointer';
     }
 
     cartContent.innerHTML = '';
@@ -85,7 +92,7 @@ function updateCartSummary() {
         const discountSection = document.getElementById('discountSection');
         if (discountSection) {
             discountSection.style.display = 'flex';
-            document.getElementById('discount').textContent = `-₹100.00`;
+            document.getElementById('discount').textContent = 'FREE';
         }
     }
 }
@@ -104,4 +111,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display cart items
     displayCartItems();
+
+    // Search functionality
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            const q = searchInput.value.trim();
+            if (q) {
+                window.location.href = '../index.html?search=' + encodeURIComponent(q);
+            }
+        });
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const q = searchInput.value.trim();
+                if (q) {
+                    window.location.href = '../index.html?search=' + encodeURIComponent(q);
+                }
+            }
+        });
+    }
 });
