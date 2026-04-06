@@ -1,0 +1,407 @@
+/* ==========================================
+   CHECKOUT PAGE STYLES
+   ========================================== */
+
+.checkout-container {
+    margin: var(--spacing-xl) 0;
+    min-height: calc(100vh - 200px);
+}
+
+.checkout-container h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.checkout-form {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-section h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-text);
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-group input.error {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 3px;
+    display: block;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: var(--spacing-md);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: var(--spacing-md);
+    margin: 0;
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 107, 53, 0.05);
+}
+
+.payment-icon {
+    font-size: 24px;
+}
+
+.payment-name {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--success-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.place-order-btn:hover {
+    background-color: #229954;
+}
+
+.order-summary {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.order-summary h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-text);
+}
+
+.summary-items {
+    margin-bottom: var(--spacing-lg);
+}
+
+.summary-item-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    font-size: 14px;
+}
+
+.summary-item-name {
+    color: var(--light-text);
+}
+
+.summary-item-price {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+/* ==========================================
+   CONFIRMATION MODAL STYLES
+   ========================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    width: 90%;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--dark-text);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--dark-text);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+.confirmation-details {
+    background-color: var(--light-bg);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+}
+
+.confirmation-details p {
+    margin: var(--spacing-sm) 0;
+    font-size: 14px;
+    color: var(--dark-text);
+}
+
+.confirmation-details strong {
+    color: var(--dark-text);
+}
+
+.confirmation-message {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-footer {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-confirm {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-cancel {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    border: 1px solid var(--border-color);
+}
+
+.btn-cancel:hover {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+}
+
+.btn-confirm {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-confirm:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+   ========================================== */
+
+html[data-theme="dark"] .checkout-form,
+html[data-theme="dark"] .order-summary {
+    background-color: var(--white);
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .form-group input,
+html[data-theme="dark"] .form-group label {
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .payment-option label {
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .modal-content {
+    background-color: var(--white);
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .modal-header {
+    border-bottom-color: var(--border-color);
+    background-color: var(--white);
+}
+
+html[data-theme="dark"] .modal-header h3 {
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .modal-body {
+    background-color: var(--white);
+}
+
+html[data-theme="dark"] .modal-footer {
+    border-top-color: var(--border-color);
+    background-color: var(--white);
+}
+
+html[data-theme="dark"] .confirmation-details {
+    background-color: #3a3b3c;
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .confirmation-details p,
+html[data-theme="dark"] .confirmation-details strong {
+    color: var(--dark-text);
+}
+
+html[data-theme="dark"] .confirmation-message {
+    color: var(--light-text);
+}
+
+html[data-theme="dark"] .btn-cancel {
+    background-color: #3a3b3c;
+    color: var(--dark-text);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .btn-cancel:hover {
+    background-color: #4a4b4c;
+    border-color: #555;
+}
+
+html[data-theme="dark"] .btn-confirm,
+html[data-theme="dark"] .place-order-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+html[data-theme="dark"] .modal-close {
+    color: var(--light-text);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - CHECKOUT PAGE
+   ========================================== */
+
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-form,
+    .order-summary {
+        padding: var(--spacing-md);
+    }
+
+    .form-section h3 {
+        font-size: 14px;
+    }
+}

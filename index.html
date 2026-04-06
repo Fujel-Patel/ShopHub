@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Modern Online Store</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🛍️ ShopHub</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn">🔍</button>
+                </div>
+                <div class="cart-icon-container">
+                    <a href="pages/orders.html" class="cart-icon" title="My Orders">
+                        📦
+                    </a>
+                    <a href="pages/cart.html" class="cart-icon" title="Shopping Cart">
+                        🛒 <span id="cartCount" class="cart-count">0</span>
+                    </a>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="container">
+            <!-- Filters Section -->
+            <aside class="filters">
+                <h3>Categories</h3>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All Products</button>
+                    <button class="filter-btn" data-category="electronics">Electronics</button>
+                    <button class="filter-btn" data-category="fashion">Fashion</button>
+                    <button class="filter-btn" data-category="groceries">Groceries</button>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <h2 id="sectionTitle">All Products</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ShopHub. All rights reserved. | Made with ❤️</p>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/product-data.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
